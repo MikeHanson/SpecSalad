@@ -1,0 +1,7 @@
+﻿<configuration>
+	<specFlow>	
+		<stepAssemblies>
+			<stepAssembly assembly="SpecSalad" />
+		</stepAssemblies>
+	</specFlow>
+</configuration>
