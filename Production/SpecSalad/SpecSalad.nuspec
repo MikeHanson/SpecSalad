@@ -15,8 +15,7 @@
         </dependencies>
     </metadata>
     <files>
-        <file src="content\app.config.transform" target="content\app.config.transform" />
-        <file src="Lib\net40\SpecSalad.dll" target="Lib\net40\SpecSalad.dll" />
-        <file src="README" target="README" />
+        <file src="app.config.transform" target="content\app.config.transform" />
+        <file src="bin\Release\SpecSalad.dll" target="Lib\net40\SpecSalad.dll" />
     </files>
 </package>
