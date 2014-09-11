@@ -112,3 +112,16 @@ C:\Users\Duncan\SkyDrive\Visual Studio Projects\SpecSalad\Examples\Calculator\Te
 C:\Users\Duncan\SkyDrive\Visual Studio Projects\SpecSalad\Examples\Calculator\Tests\Acceptance\Calculator.Acceptance\bin\Debug\SpecSalad.pdb
 C:\Users\Duncan\SkyDrive\Visual Studio Projects\SpecSalad\Examples\Calculator\Tests\Acceptance\Calculator.Acceptance\bin\Debug\Calculator.pdb
 C:\Users\Duncan\SkyDrive\Visual Studio Projects\SpecSalad\Examples\Calculator\Tests\Acceptance\Calculator.Acceptance\bin\Debug\nunit.framework.xml
+C:\_src\GIT\SpecSalad\Examples\Calculator\Tests\Acceptance\Calculator.Acceptance\bin\Debug\Calculator.Acceptance.dll.config
+C:\_src\GIT\SpecSalad\Examples\Calculator\Tests\Acceptance\Calculator.Acceptance\bin\Debug\Calculator.Acceptance.dll
+C:\_src\GIT\SpecSalad\Examples\Calculator\Tests\Acceptance\Calculator.Acceptance\bin\Debug\Calculator.Acceptance.pdb
+C:\_src\GIT\SpecSalad\Examples\Calculator\Tests\Acceptance\Calculator.Acceptance\bin\Debug\Calculator.dll
+C:\_src\GIT\SpecSalad\Examples\Calculator\Tests\Acceptance\Calculator.Acceptance\bin\Debug\nunit.framework.dll
+C:\_src\GIT\SpecSalad\Examples\Calculator\Tests\Acceptance\Calculator.Acceptance\bin\Debug\SpecSalad.dll
+C:\_src\GIT\SpecSalad\Examples\Calculator\Tests\Acceptance\Calculator.Acceptance\bin\Debug\TechTalk.SpecFlow.dll
+C:\_src\GIT\SpecSalad\Examples\Calculator\Tests\Acceptance\Calculator.Acceptance\bin\Debug\SpecSalad.pdb
+C:\_src\GIT\SpecSalad\Examples\Calculator\Tests\Acceptance\Calculator.Acceptance\bin\Debug\Calculator.pdb
+C:\_src\GIT\SpecSalad\Examples\Calculator\Tests\Acceptance\Calculator.Acceptance\bin\Debug\nunit.framework.xml
+C:\_src\GIT\SpecSalad\Examples\Calculator\Tests\Acceptance\Calculator.Acceptance\obj\Debug\Calculator.Acceptance.csprojResolveAssemblyReference.cache
+C:\_src\GIT\SpecSalad\Examples\Calculator\Tests\Acceptance\Calculator.Acceptance\obj\Debug\Calculator.Acceptance.dll
+C:\_src\GIT\SpecSalad\Examples\Calculator\Tests\Acceptance\Calculator.Acceptance\obj\Debug\Calculator.Acceptance.pdb

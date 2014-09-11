@@ -11,4 +11,4 @@
 Scenario: Save a value
 	Given I am a specified role
 	When I attempt to store in the task: the value '3'
-	Then I should be able to retrieve the answer '3'
+	Then I can retrieve the answer from the task of '3'

@@ -82,3 +82,16 @@ C:\Users\Duncan\SkyDrive\Visual Studio Projects\SpecSalad\Examples\Calculator\Te
 C:\Users\Duncan\SkyDrive\Visual Studio Projects\SpecSalad\Examples\Calculator\Tests\Unit\Calculator.Specifications\obj\Debug\Calculator.Specifications.csprojResolveAssemblyReference.cache
 C:\Users\Duncan\SkyDrive\Visual Studio Projects\SpecSalad\Examples\Calculator\Tests\Unit\Calculator.Specifications\obj\Debug\Calculator.Specifications.dll
 C:\Users\Duncan\SkyDrive\Visual Studio Projects\SpecSalad\Examples\Calculator\Tests\Unit\Calculator.Specifications\obj\Debug\Calculator.Specifications.pdb
+C:\_src\GIT\SpecSalad\Examples\Calculator\Tests\Unit\Calculator.Specifications\bin\Debug\Calculator.Specifications.dll
+C:\_src\GIT\SpecSalad\Examples\Calculator\Tests\Unit\Calculator.Specifications\bin\Debug\Calculator.Specifications.pdb
+C:\_src\GIT\SpecSalad\Examples\Calculator\Tests\Unit\Calculator.Specifications\bin\Debug\Calculator.dll
+C:\_src\GIT\SpecSalad\Examples\Calculator\Tests\Unit\Calculator.Specifications\bin\Debug\Castle.Core.dll
+C:\_src\GIT\SpecSalad\Examples\Calculator\Tests\Unit\Calculator.Specifications\bin\Debug\FakeItEasy.dll
+C:\_src\GIT\SpecSalad\Examples\Calculator\Tests\Unit\Calculator.Specifications\bin\Debug\Machine.Specifications.Clr4.dll
+C:\_src\GIT\SpecSalad\Examples\Calculator\Tests\Unit\Calculator.Specifications\bin\Debug\Machine.Specifications.dll
+C:\_src\GIT\SpecSalad\Examples\Calculator\Tests\Unit\Calculator.Specifications\bin\Debug\Calculator.pdb
+C:\_src\GIT\SpecSalad\Examples\Calculator\Tests\Unit\Calculator.Specifications\bin\Debug\Castle.Core.xml
+C:\_src\GIT\SpecSalad\Examples\Calculator\Tests\Unit\Calculator.Specifications\bin\Debug\FakeItEasy.xml
+C:\_src\GIT\SpecSalad\Examples\Calculator\Tests\Unit\Calculator.Specifications\obj\Debug\Calculator.Specifications.csprojResolveAssemblyReference.cache
+C:\_src\GIT\SpecSalad\Examples\Calculator\Tests\Unit\Calculator.Specifications\obj\Debug\Calculator.Specifications.dll
+C:\_src\GIT\SpecSalad\Examples\Calculator\Tests\Unit\Calculator.Specifications\obj\Debug\Calculator.Specifications.pdb

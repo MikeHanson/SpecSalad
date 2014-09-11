@@ -9,9 +9,9 @@ Background:
 
 Scenario: Add one to the number	
 	When I attempt to do the return one task
-	Then I should see the answer '2'
+	Then I can see the answer is '2'
 
 Scenario: Each scenario is independent of the others
 	When I attempt to do the return one task
-	Then I should see the answer '2'
+	Then I can see the answer is '2'
 	

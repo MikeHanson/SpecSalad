@@ -11,12 +11,12 @@
 Scenario: calling then with the syntax I should <question> <answer>
 	Given I am a specified role
 	When I attempt to do the return one task
-	Then I should see the answer '1'
+	Then I should see the answer is '1'
 
 Scenario: calling then with the syntax you should <question> <answer>
 	Given I am a specified role
 	When I attempt to do the return one task
-	Then you should see the answer '1'
+	Then you should see the answer is '1'
 
 Scenario: calling then with the syntax I should <question>
 	Given I am a specified role

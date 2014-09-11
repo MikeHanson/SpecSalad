@@ -1,6 +1,6 @@
 ﻿namespace SpecSalad.features.Tasks
 {
-    public class BeAbleToRetrieveTheAnswer :ApplicationTask
+    public class RetrieveTheAnswerFromTheTask :ApplicationTask
     {
         public override object Perform_Task()
         {

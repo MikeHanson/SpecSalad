@@ -19,22 +19,22 @@ namespace SpecSalad.features.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("list containing specifications")]
-    public partial class ListContainingSpecificationsFeature
+    [NUnit.Framework.DescriptionAttribute("list specifications")]
+    public partial class ListSpecificationsFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "ListContainingSpecifications.feature"
+#line 1 "ListSpecifications.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "list containing specifications", "In order to specify the expectation of list contents in a natural language\nAs a r" +
-                    "equirements writer\nI want to be able to use the syntax \'see a list of <item name" +
-                    "> containing\'", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "list specifications", "In order to specify the expectation of list contents in a natural language\r\nAs a " +
+                    "requirements writer\r\nI want to be able to use the syntax \'see a list of <item na" +
+                    "me> containing\'", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -96,7 +96,38 @@ this.ScenarioSetup(scenarioInfo);
             table2.AddRow(new string[] {
                         "Blue"});
 #line 13
- testRunner.Then("I should see a list of available colours containing", ((string)(null)), table2, "Then ");
+ testRunner.Then("I should see the available colours list containing", ((string)(null)), table2, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("a list that does not contain syntax")]
+        public virtual void AListThatDoesNotContainSyntax()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("a list that does not contain syntax", ((string[])(null)));
+#line 19
+this.ScenarioSetup(scenarioInfo);
+#line 20
+ testRunner.Given("I am a list specification", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "colours"});
+            table3.AddRow(new string[] {
+                        "Red"});
+            table3.AddRow(new string[] {
+                        "Green"});
+            table3.AddRow(new string[] {
+                        "Blue"});
+#line 21
+ testRunner.And("I can see the list of available colours", ((string)(null)), table3, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "colours"});
+            table4.AddRow(new string[] {
+                        "Pink"});
+#line 26
+ testRunner.Then("I should see the available colours list that does not contain", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

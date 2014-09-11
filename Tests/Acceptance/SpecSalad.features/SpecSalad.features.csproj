@@ -58,10 +58,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GivenStepSyntaxOptions.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\ListContainingSpecifications.feature.cs">
+    <Compile Include="Features\ListSpecifications.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ListContainingSpecifications.feature</DependentUpon>
+      <DependentUpon>ListSpecifications.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\MultipleRoles.feature.cs">
       <AutoGen>True</AutoGen>
@@ -102,7 +102,7 @@
     <Compile Include="Roles\SpecifiedRole.cs" />
     <Compile Include="Roles\TableSpecification.cs" />
     <Compile Include="Tasks\AvailableColours.cs" />
-    <Compile Include="Tasks\BeAbleToRetrieveTheAnswer.cs" />
+    <Compile Include="Tasks\RetrieveTheAnswerFromTheTask.cs" />
     <Compile Include="Tasks\DoTheReturnOneTask.cs" />
     <Compile Include="Tasks\DoTheReturnTask.cs" />
     <Compile Include="Tasks\DoTheReturnThreeTask.cs" />
@@ -112,7 +112,7 @@
     <Compile Include="Tasks\SeeOne.cs" />
     <Compile Include="Tasks\SeeTheAnswer.cs" />
     <Compile Include="Tasks\SeeTheAnswers.cs" />
-    <Compile Include="Tasks\SeeTheFavouriteColourIs.cs" />
+    <Compile Include="Tasks\SeeTheFavouriteColour.cs" />
     <Compile Include="Tasks\Store.cs" />
     <Compile Include="Tasks\StoreInTheTask.cs" />
     <Compile Include="Tasks\TheFavouriteColours.cs" />
@@ -127,9 +127,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>BackgoundTag.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\ListContainingSpecifications.feature">
+    <None Include="Features\ListSpecifications.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ListContainingSpecifications.feature.cs</LastGenOutput>
+      <LastGenOutput>ListSpecifications.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\MultipleRoles.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

@@ -129,12 +129,20 @@ namespace SpecSalad.Steps
 			GetActor(role).Perform(task, details);
 		}
 
-        [Then(@"(?:I|you) should ([^':]*) '([^']*)'")]
+        [Then(@"(?:I|you) (?:can|should) ([^':]*) (?:is|as|of) '([^']*)'")]
         public void ThenAreEqualSpecification(string theQuestion, string expectedAnswer)
         {
             string actualAnswer = Convert.ToString(GetActor(__PRIMARY__).Answer(theQuestion));
 
             Assert.AreEqual(expectedAnswer, actualAnswer);
+        }
+
+        [Then(@"(?:I|you) (?:can|should) ([^':]*) is not '([^']*)'")]
+        public void ThenAreNotEqualSpecification(string theQuestion, string expectedAnswer)
+        {
+            string actualAnswer = Convert.ToString(GetActor(__PRIMARY__).Answer(theQuestion));
+
+            Assert.AreNotEqual(expectedAnswer, actualAnswer);
         }
 
         [Then(@"(?:I|you) should see ([^':]+) (?:table|with details)")]
@@ -145,7 +153,7 @@ namespace SpecSalad.Steps
             ValidateTableAnswers(actualAnswers, expectedAnswers);
         }
 
-        [Then(@"(?:I|you) should see a list of ([^':]+) containing")]
+        [Then(@"(?:I|you) should see the ([^':]+) list containing")]
         public void ThenAreInList(string theQuestion, Table expectedAnswers)
         {
             var actualAnswers = (Table)GetActor(__PRIMARY__).Answer(theQuestion);
@@ -161,12 +169,106 @@ namespace SpecSalad.Steps
             ValidateTableAnswers(actualAnswers, expectedAnswers);
         }
 
-        [Then("@the ([a-zA-Z ]+) should see a list of ([^':]+) containing")]
-        public void ThenRoleAreInList(string role, string theQuestion, Table expectedAnswers)
+        [Then("@the ([a-zA-Z ]+) should see the ([^':]+) (?:table|list) that does not contain")]
+        public void ThenRoleAreNotInList(string role, string theQuestion, Table expectedAnswers)
+        {
+            var actualAnswers = (Table)GetActor(role).Answer(theQuestion);
+
+            ValidateExcludedTableAnswers(actualAnswers, expectedAnswers);
+        }
+
+        [Then("@the ([a-zA-Z ]+) should see the ([^':]+) list containing")]
+        public void ThenRoleAreNotList(string role, string theQuestion, Table expectedAnswers)
         {
             var actualAnswers = (Table)GetActor(role).Answer(theQuestion);
 
             ValidateTableAnswers(actualAnswers, expectedAnswers);
+        }
+
+        [Then("(?:I|you) should see the ([^':]+) (?:table|list) that does not contain")]
+        public void ThenAreNotInList(string theQuestion, Table expectedAnswers)
+        {
+            var actualAnswers = (Table)GetActor(__PRIMARY__).Answer(theQuestion);
+
+            ValidateExcludedTableAnswers(actualAnswers, expectedAnswers);
+        }
+
+        [Then(@"(?:I|you) should ([^':]+)")]
+        public void ThenAnswerQuestion(string theQuestion)
+        {
+            GetActor(__PRIMARY__).Answer(theQuestion);
+        }
+
+        [Then(@"(?:I|you) should ([^']*) that includes: (.*)")]
+        public void ThenQuestionIncludes(string theQuestion, string expectedContent)
+        {
+            Assert.Contains(expectedContent, (ICollection)GetActor(__PRIMARY__).Answer(theQuestion));
+        }
+        
+        [Then(@"(?:I|you) should ([^']*) that does not include: (.*)")]
+        public void ThenQuestionDoesNotInclude(string theQuestion, string expectedContent)
+        {
+            var answer = (ICollection)GetActor(__PRIMARY__).Answer(theQuestion);
+            Assert.That(answer, Has.None.EqualTo(expectedContent));
+        }
+
+        [Then(@"the ([a-zA-Z ]+) should ([^':]*) '([^']*)'")]
+        public void ThenAreEqualSpecificationWithSecondaryRole(string role, string theQuestion, string expectedAnswer)
+        {
+            string actualAnswer = Convert.ToString(GetActor(role).Answer(theQuestion));
+
+            Assert.AreEqual(expectedAnswer, actualAnswer);
+        }
+
+        [Then(@"the ([a-zA-Z ]+) should ([^':]+)")]
+        public void ThenAnswerQuestionWithSecondaryRole(string role, string theQuestion)
+        {
+            GetActor(role).Answer(theQuestion);
+        }
+
+        [Then(@"the ([a-zA-Z ]+) should ([^']*) that includes: (.*)")]
+        public void TheAnswerIncludesWithSecondaryRole(string role, string theQuestion, string expectedContent)
+        {
+            Assert.Contains(expectedContent, (ICollection)GetActor(role).Answer(theQuestion));
+        }
+
+        [Then(@"the ([a-zA-Z ]+) should ([^']*) that does not include: (.*)")]
+        public void ThenQuestionDoesNotInclude(string role, string theQuestion, string expectedContent)
+        {
+            var answer = (ICollection)GetActor(role).Answer(theQuestion);
+            Assert.That(answer, Has.None.EqualTo(expectedContent));
+        }
+
+        private void ValidateExcludedTableAnswers(Table actualAnswers, Table unexpectedAnswers)
+        {
+
+            var unexpectedValues = new List<string>();
+
+            foreach (TableRow row in unexpectedAnswers.Rows)
+            {
+                var builder = new StringBuilder();
+                foreach (var key in row.Keys)
+                {
+                    builder.Append(row[key]);
+                    builder.Append(",");
+                }
+
+                unexpectedValues.Add(builder.ToString());
+            }
+
+            foreach (TableRow row in actualAnswers.Rows)
+            {
+                var builder = new StringBuilder();
+                foreach (var key in row.Keys)
+                {
+                    builder.Append(row[key]);
+                    builder.Append(",");
+                }
+
+                string found = (from v in unexpectedValues where v == builder.ToString() select v).FirstOrDefault();
+
+                Assert.That(found, Is.Null, "unexpected values found in expected table");
+            }
         }
 
         private void ValidateTableAnswers(Table actualAnswers, Table expectedAnswers)
@@ -199,39 +301,7 @@ namespace SpecSalad.Steps
                 string found = (from v in expectedValues where v == builder.ToString() select v).FirstOrDefault();
 
                 Assert.That(found, Is.Not.Null, "values not found in expected table");
-            } 
-        }
-
-        [Then(@"(?:I|you) should ([^':]+)")]
-        public void ThenAnswerQuestion(string theQuestion)
-        {
-            GetActor(__PRIMARY__).Answer(theQuestion);
-        }
-
-        [Then(@"(?:I|you) should ([^']*) that includes: (.*)")]
-        public void ThenQuestionIncludes(string theQuestion, string expectedContent)
-        {
-            Assert.Contains(expectedContent, (ICollection)GetActor(__PRIMARY__).Answer(theQuestion));
-        }
-
-        [Then(@"the ([a-zA-Z ]+) should ([^':]*) '([^']*)'")]
-        public void ThenAreEqualSpecificationWithSecondaryRole(string role, string theQuestion, string expectedAnswer)
-        {
-            string actualAnswer = Convert.ToString(GetActor(role).Answer(theQuestion));
-
-            Assert.AreEqual(expectedAnswer, actualAnswer);
-        }
-
-        [Then(@"the ([a-zA-Z ]+) should ([^':]+)")]
-        public void ThenAnswerQuestionWithSecondaryRole(string role, string theQuestion)
-        {
-            GetActor(role).Answer(theQuestion);
-        }
-
-        [Then(@"the ([a-zA-Z ]+) should ([^']*) that includes: (.*)")]
-        public void TheAnswerIncludesWithSecondaryRole(string role, string theQuestion, string expectedContent)
-        {
-            Assert.Contains(expectedContent, (ICollection)GetActor(role).Answer(theQuestion));
+            }
         }
     }
 

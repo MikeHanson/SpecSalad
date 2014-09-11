@@ -5,7 +5,7 @@ using TechTalk.SpecFlow;
 
 namespace SpecSalad.features.Tasks
 {
-    public class SeeTheFavouriteColourIs : ApplicationTask
+    public class SeeTheFavouriteColour : ApplicationTask
     {
         public override object Perform_Task()
         {

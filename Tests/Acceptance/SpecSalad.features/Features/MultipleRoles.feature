@@ -11,21 +11,21 @@ Scenario: Defining two roles the first is primary and used as defaut
 	Given I am a specified role
 	And there is a secondary role
 	When I attempt to do the return one task
-	Then I should see the answer '1'
+	Then I should see the answer is '1'
 
 Scenario: Defining two roles, actions interplay and results from primary
 	Given I am a specified role
 	And there is a secondary role
 	When I attempt to do the return one task
 	And the secondary role attempts to do the subtract one task
-	Then I should see the answer '0'
+	Then I should see the answer is '0'
 
 Scenario: Defining two roles, which share the same action in different ways
 	Given I am a specified role
 	And there is a secondary role
 	When I attempt to do the return one task
 	And the secondary role attempts to do the return one task
-	Then I should see the answer '3'
+	Then I should see the answer is '3'
 
 Scenario: Defining two roles, getting an equal answer from the second role
 	Given I am a specified role
@@ -51,7 +51,7 @@ Scenario: Multiple roles in one scenario
 	And there is a auxiliary role
 	When the auxiliary role attempts to do the return one task
 	And the secondary role attempts to do the return one task
-	Then I should see the answer '3'
+	Then I should see the answer is '3'
 
 Scenario: Defining the role using the secondary role given 
 	Given there is a secondary role
@@ -61,7 +61,7 @@ Scenario: Defining the role using the secondary role given
 Scenario: Defining the role but calling steps without role
 	Given there is a secondary role
 	When I attempt to do the return one task
-	Then I should see the answer '2'
+	Then I should see the answer is '2'
 
 Scenario: Defining the secondary role with an action in the given
 	Given I am a specified role
@@ -74,5 +74,5 @@ Scenario: Defining two roles with the first person used second the first person 
 	Given there is a secondary role
 	And I am a specified role
 	When I attempt to do the return one task
-	Then I should see the answer '1'
+	Then I should see the answer is '1'
 
