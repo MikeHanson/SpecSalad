@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SpecSalad.features.Tasks
 {
     public class SeeOne : ApplicationTask
     {
-        public override object Perform_Task()
+        protected override object Perform_Task_With(IDictionary<string, string> details)
         {
             Role.ShouldContainOne();
 

@@ -1,13 +1,14 @@
 using System;
+using System.Collections.Generic;
 using SpecSalad;
 
 namespace Calculator.Tasks
 {
     public class Calculate : ApplicationTask
     {
-        public override object Perform_Task()
+        protected override object Perform_Task_With(IDictionary<string, string> details)
         {
-            var sum = Details.Value_Of("with_the_following");
+            var sum = details["with_the_following"];
 
             var items = sum.Split(' ');
 

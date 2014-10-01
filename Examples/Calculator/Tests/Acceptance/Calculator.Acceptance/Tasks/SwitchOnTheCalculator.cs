@@ -1,13 +1,15 @@
-﻿using SpecSalad;
+﻿using System;
+using System.Collections.Generic;
+using SpecSalad;
 
 namespace Calculator.Tasks
 {
     public class SwitchOnTheCalculator : ApplicationTask
     {
-        public override object Perform_Task()
+        protected override object Perform_Task_With(IDictionary<string, string> details)
         {
-            Role.SwitchOnCalculator();
-            
+            this.Role.SwitchOnCalculator();
+
             return null;
         }
     }

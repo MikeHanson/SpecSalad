@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using TechTalk.SpecFlow;
 
@@ -6,7 +7,7 @@ namespace SpecSalad.features.Tasks
 {
     public class TheFavouriteColours : ApplicationTask
     {
-        public override object Perform_Task()
+        protected override object Perform_Task_With(IDictionary<string, string> details)
         {
             var table = (Table)this.Retrieve("whats your favourite colour");
 

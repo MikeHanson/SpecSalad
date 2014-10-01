@@ -1,10 +1,12 @@
-﻿namespace SpecSalad.features.Tasks
+﻿using System.Collections.Generic;
+
+namespace SpecSalad.features.Tasks
 {
     public class UpVoteTheAnswer : ApplicationTask
     {
-        public override object Perform_Task()
+        protected override object Perform_Task_With(IDictionary<string, string> details)
         {
-            Role.UpVoteAnswer(Details.Value());
+            Role.UpVoteAnswer(details.DefaultValue());
 
             return null;
         }

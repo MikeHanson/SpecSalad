@@ -1,24 +1,28 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SpecSalad.features.Tasks
 {
     public class DoTheReturnTask : ApplicationTask
     {
-        readonly List<string> _knownParameterNames = new List<string>
-                                                         {
-                                                             "with_a_single_parameter",
-                                                             "with_parameter",
-                                                             "and_parameter"
-                                                         };
+        private readonly List<string> _knownParameterNames = new List<string>
+                                                             {
+                                                                 "with_a_single_parameter",
+                                                                 "with_parameter",
+                                                                 "and_parameter"
+                                                             };
 
-        public override object Perform_Task()
+        protected override object Perform_Task_With(IDictionary<string, string> details)
         {
-            foreach (var parameterName in _knownParameterNames)
+            foreach(
+                var parameterName in
+                    this._knownParameterNames.Where(details.ContainsKey))
             {
                 int paramValue;
-                int.TryParse(Details.Value_Of(parameterName), out paramValue);
+                int.TryParse(details[parameterName], out paramValue);
 
-                Role.Add(paramValue);
+                this.Role.Add(paramValue);
             }
 
             return true;

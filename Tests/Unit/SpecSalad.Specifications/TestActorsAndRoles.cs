@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq.Expressions;
 using System.Text.RegularExpressions;
@@ -20,8 +21,8 @@ namespace SpecSalad.Specifications
 
 
     public class SetThePlaceAtTheTable : ApplicationTask
-    {        
-        public override object Perform_Task()
+    {
+        protected override object Perform_Task_With(IDictionary<string, string> details)
         {
             var place = new string[2];
 
@@ -34,7 +35,7 @@ namespace SpecSalad.Specifications
 
     public class LayTheTable : ApplicationTask
     {
-        public override object Perform_Task()
+        protected override object Perform_Task_With(IDictionary<string, string> details)
         {
             Match match = Regex.Match(Details.Value_Of("with_places_for"),@"\d");
 

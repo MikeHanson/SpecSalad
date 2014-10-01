@@ -1,10 +1,12 @@
-﻿namespace SpecSalad.features.Tasks
+﻿using System.Collections.Generic;
+
+namespace SpecSalad.features.Tasks
 {
     public class Store : ApplicationTask
     {
-        public override object Perform_Task()
+        protected override object Perform_Task_With(IDictionary<string, string> details)
         {
-            Role.StoreValue("the_value", Details.Value_Of("the_value"));
+            Role.StoreValue("the_value", details["the_value"]);
 
             return null;
         }

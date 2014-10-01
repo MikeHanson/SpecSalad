@@ -81,7 +81,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 12
  testRunner.Given("I am a specified role", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 13
- testRunner.When("I attempt to store in the task: the value \'3\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I attempt to store in the task: \'3\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14
  testRunner.Then("I can retrieve the answer from the task of \'3\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

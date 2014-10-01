@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Actor.cs" />
+    <Compile Include="DictionaryExtensions.cs" />
     <Compile Include="Director.cs" />
     <Compile Include="NeedingSpecifics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

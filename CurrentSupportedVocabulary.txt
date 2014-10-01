@@ -1,0 +1,49 @@
+This document provides details of how the vocabulary in SpecSalad feature files is controlled and executed.
+
+Background
+
+Because SpecSalad is an extension of SpecFlow it is still dependent on matching Given, When and Then statements in feature files to Step Definitions.  It achieves this by defining a fixed set of step definitions, which are matched by SpecFlow using Regular Expressions.  Generally the implementation of the step definitions matches an appropriate Role and Task, executes the task and makes one or more assertions against the result.  In some cases the Task is expected to return null and make an assertion directly, the result of the step is the outcome of the assertion.
+
+The following section presents the current set of step definitions with examples of the usage supported and guidance on the implementation.
+
+Role Definitions
+Each Scenario must begin with a Given that specifies the intial Role context.
+[Given(@"(?:I am|you are) (?:a|an) ([a-zA-Z ]+)")]
+
+Given I am a System User
+Given you are a System User
+Given I am an Administrator
+Given you are an Administrator
+
+[Given(@"there is (?:a|an) ([a-zA-Z ]+)")]
+
+Given there is a System User
+Given there is an Administrator
+
+
+
+[Given(@"(?:I|you) (?:attempt to|was able to|were able to|did)? ([A-Z a-z_-]*)(?:[:|,] (.*))?")]
+[Given(@"the ([a-zA-Z ]+) (?:attempts to|was able to|were able to|did|does)? ([A-Z a-z_-]*)(?:[:|,] (.*))?")]
+[Given(@"(?:I|you) can see the (?:table|details|list of) ([A-Z a-z_-]*)?")]
+[Given(@"the ([a-zA-Z ]+) can see the (?:table|details|list of) ([A-Z a-z_-]*)?")]
+
+[When(@"(?:I|you) (?:attempt to|was able to|were able to|did|do)? ([A-Z a-z_-]*)(?:[:|,] (.*))?")]
+[When(@"the ([a-zA-Z ]+) (?:attempts to|was able to|were able to|did|does)? ([A-Z a-z_-]*)(?:[:|,] (.*))?")]
+
+[Then(@"(?:I|you) (?:can|am able to|are able to)? ([A-Z a-z_-]*)(?:[:|,] (.*))?")]
+[Then(@"the ([a-zA-Z ]+) (?:can|is able to)? ([A-Z a-z_-]*)(?:[:|,] (.*))?")]
+[Then(@"(?:I|you) (?:can|should) ([^':]*) (?:is|as|of) '([^']*)'")]
+[Then(@"(?:I|you) (?:can|should) ([^':]*) is not '([^']*)'")]
+[Then(@"(?:I|you) should see ([^':]+) (?:table|with details)")]
+[Then(@"(?:I|you) should see the ([^':]+) list containing")]
+[Then("@the ([a-zA-Z ]+) should see ([^':]+) (?:table|with details)")]
+[Then("@the ([a-zA-Z ]+) should see the ([^':]+) (?:table|list) that does not contain")]
+[Then("@the ([a-zA-Z ]+) should see the ([^':]+) list containing")]
+[Then("(?:I|you) should see the ([^':]+) (?:table|list) that does not contain")]
+[Then(@"(?:I|you) should ([^':]+)")]
+[Then(@"(?:I|you) should ([^']*) that includes: (.*)")]
+[Then(@"(?:I|you) should ([^']*) that does not include: (.*)")]
+[Then(@"the ([a-zA-Z ]+) should ([^':]*) '([^']*)'")]
+[Then(@"the ([a-zA-Z ]+) should ([^':]+)")]
+[Then(@"the ([a-zA-Z ]+) should ([^']*) that includes: (.*)")]
+[Then(@"the ([a-zA-Z ]+) should ([^']*) that does not include: (.*)")]

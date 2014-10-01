@@ -1,10 +1,11 @@
-﻿using SpecSalad;
+﻿using System.Collections.Generic;
+using SpecSalad;
 
 namespace Calculator.Tasks
 {
     public class SeeTheAnswer : ApplicationTask
     {
-        public override object Perform_Task()
+        protected override object Perform_Task_With(IDictionary<string, string> details)
         {
             return Role.LookAtTheDisplay();
         }

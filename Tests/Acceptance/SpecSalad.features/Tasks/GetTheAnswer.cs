@@ -1,8 +1,10 @@
-﻿namespace SpecSalad.features.Tasks
+﻿using System.Collections.Generic;
+
+namespace SpecSalad.features.Tasks
 {
     public class GetTheAnswer : ApplicationTask
     {
-        public override object Perform_Task()
+        protected override object Perform_Task_With(IDictionary<string, string> details)
         {
             return Role.GetTheAnswer();
         }
