@@ -48,6 +48,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DictionaryExtensions.cs" />
     <Compile Include="Features\BackgoundTag.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
